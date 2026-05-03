@@ -39,12 +39,6 @@ npm install
 
 ### 2. Configure Environment
 
-```bash
-cp .env.example .env.local
-```
-
-Edit `.env.local`:
-```env
 MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/projectflow
 JWT_SECRET=your-super-long-random-secret-min-32-chars
 NEXT_PUBLIC_APP_URL=http://localhost:3000
@@ -124,37 +118,6 @@ src/
 | POST   | /api/tasks     | Create task       |
 | PATCH  | /api/tasks/:id | Update task       |
 | DELETE | /api/tasks/:id | Delete task       |
-
----
-
-## Deploy to Railway
-
-### 1. Push to GitHub
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <your-github-repo>
-git push -u origin main
-```
-
-### 2. Create Railway Project
-1. Go to https://railway.app
-2. Click **New Project** → **Deploy from GitHub**
-3. Select your repository
-
-### 3. Add Environment Variables in Railway
-In your Railway project settings → **Variables**, add:
-```
-MONGODB_URI=mongodb+srv://...
-JWT_SECRET=your-secret-key
-NODE_ENV=production
-```
-
-### 4. Deploy
-Railway auto-deploys on every push. Your app will be live at the provided Railway URL.
-
-> The `railway.json` in this project configures the build and start commands automatically.
 
 ---
 
